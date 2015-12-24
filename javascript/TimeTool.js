@@ -22,11 +22,12 @@ myDate.toLocaleString( );        //获取日期与时间
 /**
  * @author [meddkim]
  * @since  [0.0.1]
+ * @version [0.0.1]
  * @param  detail:具体需要那一天，例如0代表系统当前时间，-n代表往前推几天，n代表往后推几天
  *         separator：用于在分割年月日
  * @return {time}
  */
 function getNowFormatDate(){
 
-	
+
 } 
