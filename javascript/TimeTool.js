@@ -21,13 +21,26 @@ myDate.toLocaleString( );        //获取日期与时间
 
 /**
  * @author [meddkim]
+ * @description  [该函数返回一个指定格式的时间，具体某一天]
  * @since  [0.0.1]
  * @version [0.0.1]
  * @param  detail:具体需要那一天，例如0代表系统当前时间，-n代表往前推几天，n代表往后推几天
- *         separator：用于在分割年月日
- * @return {time}
+ *         separator：用于分割年月日
+ * @return 获取日期
  */
-function getNowFormatDate(){
-
-
+function GetLocalFormatDate(detail,separator){
+	var nowDate = new Date();
+    nowDate.setDate(nowDate.getDate()+detail);//获取AddDayCount天后的日期
+    var y = nowDate.getFullYear();
+    var m = nowDate.getMonth()+1;//获取当前月份的日期
+    var d = nowDate.getDate();
+    if(d<10 && m<10){
+        return y+separator+"0"+m+separator+"0"+d;
+    }else if(d<10 && m>=10){
+        return y+separator+m+separator+"0"+d;
+    }else if(d>=10 && m<10){
+        return y+separator+"0"+m+separator+d;
+    }else{
+        return y+separator+m+separator+d;
+    }
 } 
